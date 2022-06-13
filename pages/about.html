@@ -1,0 +1,100 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS File/style.CSS' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/ca73119b63.js" crossorigin="anonymous"></script>
+    <title>About Us</title>
+</head>
+<body>
+    <nav class="navbar back1 h-nav">
+        <ul class="nav-list v-class">
+            <div class="logo"><img src="{% static 'Img/Logo.png' %}" alt="Logo"></div>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'DoctorDetails' %}">Book Apointment</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Book Apointment</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'LabTest' %}">Book Lab Test</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Book Lab Test</a></li>
+            {% endif %}
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+        <div class="rightNav v-class">
+            {% if user.is_authenticated %}
+            <li class="Hi"> Hi, {{user.first_name}} </li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login/Signup</a></li>
+            {% endif %}
+        </div>
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+
+        </div>
+    </nav>
+
+    <section class="About">
+        
+
+        <div class="About1">
+            <p>The website was made by three students of Shri Guru Gobind Singhji Institute of Engineering & technology, Vishnupuri, Nanded.</p>
+        </div>
+
+        <div class="About2">
+            <img class="About2img" src="{% static 'Img/download.jpg' %}" alt="Developer">
+        </div>
+
+       
+    </section>
+
+    <section class="About left">
+        <div class="About1">
+            <p>Developer of the website designed the site under DataBase Management System as a project. The basic purpose of website is understanding of Database Management System.</p>
+        </div>
+        
+        <div class="About2">
+            <img class="About2img" src="{% static 'Img/download (1).jpg' %}" alt="Developer">
+        </div>
+    </section>
+
+    <section class="About">
+        
+
+        <div class="About1">
+            <p><b>Pravin Kulkarni, Ashutosh Jadhav, & Atharv Shinde</b> are the developers of these website. They are currently purchusing B.Tech in Computer Science Engineering from Shri Guru Gobind Singhji Institute of Engineering & technology, Vishnupuri, Nanded. Where <b>Pravin Kulkarni</b> has developed the frontend of the site <b>Ashutosh Jadhav</b> developed the backend of site and <b>Atharv Shinde</b> made contribution in both frontend and backend development.</p>
+        </div>
+
+        <div class="About2">
+            <img class="About2img" src="{% static 'Img/download2.png' %}" alt="Developer">
+        </div>
+
+       
+    </section>
+
+    <section class="contact">
+        <hr>
+        <h2 class="cont1">Contact Us</h2><br>
+        <div>
+            <p class="telephone"><a href="mailto: pravinkulkarni440@gmail.com">Email: pravinkulkarni440@gmail.com</a></p><br>
+            <p class="telephone"><a href="tel: +91-1001558888">Mobile: +91-9552403843</a></p>
+        </div>
+
+    </section>
+    
+    <footer>
+        <p class="text-footer">Copyright &copy; 2021 www.MedEasy.com - All rights reserved</p>
+    </footer>
+ 
+</body>
+
+</html>
